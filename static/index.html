@@ -9,18 +9,43 @@
 </head>
 
 <body>
-    <h1>Welcome to Casino</h1>
-    <h2>aaaa</h2>
-    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur facere, molestiae sequi esse recusandae
-        minus at ea magni ducimus possimus placeat vitae laudantium explicabo hic sed veniam molestias sit corporis?
-    </h2>
-    <h2>Choose a number from 1 to 5</h2>
-    <input class="input" type="text" placeholder="enter a number" value="">
-    <button type="button" class="play-btn">Play</button>
-    <h3>Result</h3>
-    <h3>aaaa</h3>
+    <!-- <h1>Welcome to Casino</h1>
+
+        <h2>Choose a number from 1 to 5</h2>
+        <input class="input" type="text" placeholder="enter a number" value="">
+        <button type="button" class="play-btn">Play</button> -->
+
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="card text-center" style="width: 40rem; margin-top: 12rem;">
+            <div class="card-header">
+                <h1>Welcome to the casino!</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h4>Choose a number between 1 and 5</h4>
+                    <div class="col-6">
+                        <input type="text" class="user-number" placeholder="Enter a number">
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-success play-btn" style="width: 10rem;">
+                            Play
+                        </button>
+                    </div>
+                    <h3>Result</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="./main.js"></script>
     <script src="./task.js"></script>
 </body>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
 </html>
