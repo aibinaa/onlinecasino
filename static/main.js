@@ -24,6 +24,10 @@ playBtn.addEventListener('click', () => {
     } else if (Number(userInput.value) > 5 || Number(userInput.value) < 0) {
         alert('Enter a number between 0 and 5');
     } else {
+        userInput.disabled = true;
+        playBtn.disabled = true;
+
+
         const obj = {
             userNumber: userInput.value
         };
@@ -31,14 +35,20 @@ playBtn.addEventListener('click', () => {
         fetch('/user', {
             method: 'POST',
             headers: {
-                 'Content-Type': 'application/json'
-                },
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(obj)
         }).then(response => response.json())
-          .then(response => {
-            console.log(response);
-            resultHeader.innerHTML = response.message
-          })
-          .then()
+            .then(response => {
+                console.log(response);
+                resultHeader.innerHTML = response.message
+            })
+            .then(() => {
+                setTimeout(() => {
+                    userInput.disabled = false;
+                    playBtn.disabled = false;
+                    resultHeader.innerHTML = "Play again"
+                }, 1000)
+            })
     }
 });
