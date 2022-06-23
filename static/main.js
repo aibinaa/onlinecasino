@@ -1,6 +1,7 @@
 const playBtn = document.querySelector('.play-btn');
 const userInput = document.querySelector('.user-input');
 const resultHeader = document.querySelector('.result-header');
+const moneyInput = document.querySelector('.money-input')
 
 const namePrompt = prompt('Enter your name');
 
@@ -41,6 +42,7 @@ playBtn.addEventListener('click', () => {
         }).then(response => response.json())
             .then(response => {
                 console.log(response);
+                moneyInput.value = response.money;
                 resultHeader.innerHTML = response.message
             })
             .then(() => {

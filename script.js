@@ -5,18 +5,26 @@ const app = new express();
 
 app.use(express.json());
 
-const responseObj = {};
+const responseObj = {
+    money: 1000
+};
 
 app.post('/name', (req, res) => {
     responseObj.name = req.body.name;
 });
 
 app.post('/user', (request, response) => {
-    let randomNumber = randomizer()
-    if (+request.body.userNumber === randomNumber) {
-        responseObj.message = `${responseObj.name}, you won!`;
+    if (responseObj.money == 0) {
+        responseObj.message = 'no money on balance'
     } else {
-        responseObj.message = `${responseObj.name}, you lost!`;
+        let randomNumber = randomizer()
+        if (+request.body.userNumber === randomNumber) {
+            responseObj.money += 1000;
+            responseObj.message = `${responseObj.name}, you won!`;
+        } else {
+            responseObj.money -= 1000;
+            responseObj.message = `${responseObj.name}, you lost!`;
+        }
     }
     response.send(JSON.stringify(responseObj));
 });
